@@ -17,7 +17,7 @@ const descontoSchema = new mongoose.Schema({
 })
 
 const trabalhadorSchema = new mongoose.Schema({
-    name: {type: String, required: true},
+    nome: {type: String, required: [true, 'Informe o nome do trabalhador!']},
     email: {type: String},
     proventos: [proventoSchema],
     pagamentos: [pagamentoSchema],
