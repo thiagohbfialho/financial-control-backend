@@ -3,7 +3,7 @@ const mongoose = restful.mongoose
 
 const proventoSchema = new mongoose.Schema({
     descricao: {type: String, required: true},
-    valor: {type: Number, min: 0, required: true},
+    valor: {type: Number, min: 0, required: true, max: 200},
 })
 
 const pagamentoSchema = new mongoose.Schema({

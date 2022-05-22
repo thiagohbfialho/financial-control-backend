@@ -1,7 +1,9 @@
 const FinancialControl = require('./financialControl')
+const errorHandler = require('../common/errorHandler')
 
 FinancialControl.methods(['get', 'post', 'put', 'delete'])
 FinancialControl.updateOptions({ new: true, runValidators: true })
+FinancialControl.after('post', errorHandler).after('put', errorHandler)
 
 FinancialControl.route('get', (req, res, next) => {
     FinancialControl.find({}, (err, docs) => {
